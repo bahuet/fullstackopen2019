@@ -2,20 +2,29 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const App = () => {
-    const course = 'Half Stack application development'
-    const part1 = 'Fundamentals of React'
-    const exercises1 = 10
-    const part2 = 'Using props to pass data'
-    const exercises2 = 7
-    const part3 = 'State of a component'
-    const exercises3 = 14
-    const parts = [part1, part2, part3]
-    const exs = [exercises1, exercises2, exercises3]
+    const course = {
+        name: 'Half Stack application development',
+        parts: [
+            {
+                name: 'Fundamentals of React',
+                exercises: 10
+            },
+            {
+                name: 'Using props to pass data',
+                exercises: 7
+            },
+            {
+                name: 'State of a component',
+                exercises: 14
+            }
+        ]
+    }
+
     return (
         <div>
             <Header course={course} />
-            <Content parts={parts} exs={exs} />
-            <Total exs={exs} />
+            <Content parts={course.parts} />
+            <Total parts={course.parts} />
         </div>
     )
 }
@@ -23,7 +32,7 @@ const App = () => {
 const Header = (props) => {
     return (
         <>
-            <h1>{props.course}</h1>
+            <h1>{props.course.name}</h1>
         </>
     )
 }
@@ -32,7 +41,7 @@ const Content = (props) => {
 
     return (
         <>
-        {props.parts.map((x, i) => <p key={x}> {x} {props.exs[i]} </p>)}
+            {props.parts.map(x => <p key={x.name}> {x.name} {x.exercises}  </p>)}
         </>
     )
 }
@@ -40,7 +49,7 @@ const Content = (props) => {
 const Total = (props) => {
     return (
         <>
-            <p>Number of exercises {props.exs.reduce((a, b) => a + b)}</p>
+            <p>Number of exercises {props.parts.map(x => x.exercises).reduce((a, b) => a + b)}</p>
         </>
     )
 }
