@@ -1,2 +1,2 @@
 # fullstackopen2019
-# Courseinfo Exercise
+Courseinfo Exercise
