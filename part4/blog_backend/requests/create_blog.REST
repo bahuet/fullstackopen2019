@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEyMyIsImlkIjoiNWRkZmQxMmU4YjVjMjkyNTk0ODM2MzMzIiwiaWF0IjoxNTc0OTUxMzQ1fQ.soFQ5xqRqpxcLm5mAPj6S3gqNyDDP0N3Q0Qq3r-SpDg
+
+{
+"title": "SuperBlog666",
+"author": "Johnyw3",
+"url": "www.sblog3.com",
+"likes": 55
+}
